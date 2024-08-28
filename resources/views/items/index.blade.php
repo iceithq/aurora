@@ -8,8 +8,8 @@
     <table class="table table-hover">
         <thead>
             <th>Item</th>
-            <th>Description</th>
             <th>Price</th>
+            <th></th>
             <th></th>
         </thead>
         <tbody>
@@ -18,16 +18,18 @@
                     <td>
                         <a href="{{ route('items.show', $item->id) }}">
                             {{ $item->name }}
-                        </a>
+                        </a><br>
+                        {{ $item->description }}
                     </td>
-                    <td>{{ $item->description }}</td>
                     <td>{{ $item->price }}</td>
-                    <td nowrap>
+                    <td>
                         <a href="{{ route('items.edit', $item->id) }}">Edit</a>
+                    </td>
+                    <td>
                         <form method="POST" action="{{ route('items.destroy', $item->id) }}">
                             @csrf
                             @method('DELETE')
-                            <button>Delete</button>
+                            <button class="btn btn-outline-danger ">Delete</button>
                         </form>
                     </td>
                 </tr>
