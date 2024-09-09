@@ -176,7 +176,7 @@
         <div class="text-center p-3">
             © 2024
             Aurora
-            by ICE IT Solutions. All Rights Reserved.
+            by <a href="https://iceithq.com">ICE IT Solutions</a>. All Rights Reserved.
         </div>
     </footer>
 
