@@ -22,4 +22,10 @@
             or <a href="{{ route('items.index') }}">cancel</a>
         </div>
     </form>
+
+    <form method="POST" action="{{ route('items.destroy', $item->id) }}">
+        @csrf
+        @method('DELETE')
+        <button class="btn btn-outline-danger ">Delete</button>
+    </form>
 @endsection

@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <h2>Items</h2>
     <p>
@@ -10,7 +9,6 @@
             <th>Item</th>
             <th>Price</th>
             <th></th>
-            <th></th>
         </thead>
         <tbody>
             @foreach ($items as $item)
@@ -19,18 +17,11 @@
                         <a href="{{ route('items.show', $item->id) }}">
                             {{ $item->name }}
                         </a><br>
-                        {{ $item->description }}
+                        <small>{{ $item->description }}</small>
                     </td>
                     <td>{{ $item->price }}</td>
                     <td>
                         <a href="{{ route('items.edit', $item->id) }}">Edit</a>
-                    </td>
-                    <td>
-                        <form method="POST" action="{{ route('items.destroy', $item->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-outline-danger ">Delete</button>
-                        </form>
                     </td>
                 </tr>
             @endforeach
